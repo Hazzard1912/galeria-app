@@ -1,0 +1,47 @@
+<div class="container flex align-items-center">
+  <div class="col text-center p-4">
+    <div
+      class="card bg-bluegray-900 flex flex-column align-items-center md:w-4 sm:w-10"
+      style="height: 50vh; border-radius: 5%; margin: 0 auto"
+    >
+      <div style="margin: auto 0">
+        <h1 class="text-primary mb-4">Iniciar Sesion</h1>
+        <form
+          [formGroup]="formulario"
+          class="flex flex-column align-items-center gap-5 login-form"
+          (ngSubmit)="request()"
+        >
+          <span class="p-float-label">
+            <input pInputText formControlName="correo" id="correo" />
+            <label htmlFor="correo">ejemplo@mail.com</label>
+          </span>
+          <span class="p-float-label">
+            <p-password
+              formControlName="password"
+              [toggleMask]="true"
+              id="password"
+              [feedback]="false"
+            >
+            </p-password>
+            <label htmlFor="password">contraseña123</label>
+          </span>
+          <p-button
+            icon="pi pi-check"
+            label="Ingresar"
+            [disabled]="formulario.invalid"
+            type="submit"
+          >
+          </p-button>
+        </form>
+        <div class="mt-2">
+          <a
+            [routerLink]="['/register']"
+            routerLinkActive="router-link-active"
+            class="text-white"
+            >Registrarse!</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

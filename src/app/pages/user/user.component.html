@@ -1,0 +1,18 @@
+<div class="fixed top-0 left-0 h-full bg-bluegray-900 m-0" style="width: 200px">
+  <div class="flex flex-wrap w-full gap-2 p-2 justify-content-center">
+    <p-fileUpload mode="basic" name="archivo" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" [maxFileSize]="10000000" [fileLimit]="1" (onUpload)="subirArchivo($event)" [auto]="true" chooseLabel="Subir Imagen"></p-fileUpload>
+    <p-button icon="pi pi-fw pi-times" (onClick)="logout()" label="Salir"></p-button>
+  </div>
+</div>
+<div class="grid" style="margin-left: 200px; height: 100vh">
+    <div class="col-12 fixed top-0 z-1 bg-bluegray-900 flex justify-content-center" style="height: 100px;">
+        <h1 class=" text-primary">Tu Galeria Privada</h1>
+    </div>
+  <div class="col-12 flex flex-row flex-wrap p-6 gap-4" style="margin-top: 100px;">
+    <p-image *ngFor="let rutaImagen of imagenes"
+      [src]="rutaImagen"
+      width="300"
+      [preview]="true"
+    ></p-image>
+  </div>
+</div>
